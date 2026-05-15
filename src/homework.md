@@ -1,3 +1,4 @@
+Episode 3
 - Create a repository
 - Initialize a repository
 - node_module, package.json, package-lock.json
@@ -9,3 +10,7 @@
 - What are dependencies
 - What is the use of -g while npm install
 - What is the difference between caret and tilda (^ and ~)
+
+Episode 4
+- Play with routes /hello /hello/2 /test /
+- Order of the routes plays a very important role

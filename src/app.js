@@ -4,19 +4,27 @@ const express = require("express");
 // Creating server using expressJS framework
 const app = express(); // instance of expressJS application
 
-
 // Request handler
 // If we want to handle different request differently we need to modify this
-app.use("/hello", (req, res) => {
-    res.send("Hello from the hello route!");
-});
-
 app.use("/test", (req, res) => {
-    res.send("Hello from the test route!");
+    res.send("Hello from the server! Testing...");
 });
 
-app.use("/", (req, res) => {
-    res.send("Hello from the server!");
+// It will handle all the route API
+// app.use("/user", (req, res) => {
+//     res.send("Hello from the server! User...");
+// });
+
+app.get("/user", (req, res) => {
+    res.send({ firstName: "Nitin", lastName: "Premanand"})
+});
+
+app.post("/user", (req, res) => {
+    res.send("Data successfully saved into database");
+});
+
+app.delete("/user", (req, res) => {
+    res.send("Data successfully removed from database");
 });
 
 // Listening on port 3000
