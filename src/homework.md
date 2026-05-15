@@ -14,3 +14,8 @@ Episode 3
 Episode 4
 - Play with routes /hello /hello/2 /test /
 - Order of the routes plays a very important role
+- Exploring routes
+    - Use of +, *, (), ?
+    - Use of regex in routes /a/ /.^fly$/
+- Read query params in request
+- Read dynamic routes can be multiple
