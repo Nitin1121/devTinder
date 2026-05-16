@@ -26,3 +26,5 @@ Episode 5
 - next() & error along with res.send()
 - app.use("/route, rh1, [rh2, rh3], rh4, rh5)
 - What is middleware, how express js handle request behind the scene
+- Difference between app.use() and app.all()
+- Error handling using app.use("/", (err, req, res, next) => {}) handle at end
