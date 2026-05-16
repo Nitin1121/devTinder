@@ -31,6 +31,15 @@ app.use("/user", (req, res, next) => {
     console.log("5th response...");
     res.send("5th response...");
 });
+// app.get("/user", (req, res, next) => {
+//     console.log("1st response...");
+//     // res.send("1st response...");
+//     next();
+// });
+// app.get("/user", (req, res, next) => {
+//     console.log("2st response...");
+//     res.send("2st response...");
+// });
 
 // Listening on port 3000
 app.listen("3000", () => {
