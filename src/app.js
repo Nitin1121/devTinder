@@ -10,33 +10,26 @@ app.use("/test", (req, res) => {
     res.send("Hello from the server! Testing...");
 });
 
-// It will handle all the route API
-// app.use("/user", (req, res) => {
-//     res.send("Hello from the server! User...");
-// });
-
-// Works for /user, /user/xyz, /user/1
-app.get("/user", (req, res) => {
-    console.log(req.query); // Reads query parameter from request as {}
-    res.send({ firstName: "Nitin", lastName: "Premanand"})
-});
-
-app.get("/user/:userId", (req, res) => {
-    console.log(req.params); // Reads path parameter from request as {}
-    res.send({ firstName: "Nitin", lastName: "Premanand"})
-});
-
-app.get("/user/:userId/:password/:name", (req, res) => {
-    console.log(req.params); // Reads path parameter from request as {}, : means dyanmic
-    res.send({ firstName: "Nitin", lastName: "Premanand"})
-});
-
-app.post("/user", (req, res) => {
-    res.send("Data successfully saved into database");
-});
-
-app.delete("/user", (req, res) => {
-    res.send("Data successfully removed from database");
+// app.use("/user", [rh1, rh2, rh3, rh4]);
+app.use("/user", (req, res, next) => {
+    console.log("1st response...");
+    // res.send("1st response...");
+    next();
+}, (req, res, next) => {
+    console.log("2nd response...");
+    // res.send("2nd response...");
+    next();
+}, (req, res, next) => {
+    console.log("3rd response...");
+    // res.send("3rd response...");
+    next();
+}, (req, res, next) => {
+    console.log("4th response...");
+    // res.send("4th response...");
+    next();
+}, (req, res, next) => {
+    console.log("5th response...");
+    res.send("5th response...");
 });
 
 // Listening on port 3000
