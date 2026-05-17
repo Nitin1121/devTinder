@@ -43,3 +43,7 @@ Episode 7
 - If there multiple similar record findOne() returns which one ?
 - Difference between PUT and PATCH
 - Explore the Mongoose documentation for Modal method
+
+Episode 8
+- Explore schema options from documentation
+- required, unique, trim, lowercase, uppercase, min/max, minLength/maxLength custom validation, timestamp
