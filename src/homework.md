@@ -49,3 +49,4 @@ Episode 8
 - required, unique, trim, lowercase, uppercase, min/max, minLength/maxLength custom validation, timestamp
 - API level validation
 - Data sanitization for each fields
+- npm i validator and explore validator function
