@@ -28,3 +28,10 @@ Episode 5
 - What is middleware, how express js handle request behind the scene
 - Difference between app.use() and app.all()
 - Error handling using app.use("/", (err, req, res, next) => {}) handle at end
+
+Episode 6
+- Install mongoose
+- Connect your application to the database `connection-url/database-name`
+- Call connectDb function before starting application on a PORT
+- Creation of schema and modal
+- Create CRUD api's to enuring its working

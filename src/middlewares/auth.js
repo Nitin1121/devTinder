@@ -23,4 +23,4 @@ const adminAuthorization = (req, res, next) => {
 module.exports = {
     userAuthorization,
     adminAuthorization
-}
+};
