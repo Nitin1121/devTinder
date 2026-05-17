@@ -41,3 +41,5 @@ Episode 7
 - Add midlleware express.json()
 - Make API dynamic to receive data from the end user
 - If there multiple similar record findOne() returns which one ?
+- Difference between PUT and PATCH
+- Explore the Mongoose documentation for Modal method

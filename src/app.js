@@ -25,6 +25,7 @@ app.get("/user", async (req, res) => {
     const userName = req.body.username;
     try {
         const users = await User.find({ username: userName });
+
         if (!users.length) {
             res.status(404).send("User not found");
         } else {
@@ -32,6 +33,7 @@ app.get("/user", async (req, res) => {
         }
 
         // const user = await User.findOne({ username: userName });
+
         // if (!user) {
         //     res.status(404).send("User not found");
         // } else {
@@ -45,11 +47,33 @@ app.get("/user", async (req, res) => {
 app.get("/users", async (req, res) => {
     try {
         const users = await User.find();
+
         if (!users.length) {
             res.status(404).send("User not found");
         } else {
             res.send(users);
         }
+    } catch(err) {
+        res.status(400).send("Something went wrong!", err);
+    }
+});
+
+app.patch("/user", async (req, res) => {
+    const data = req.body;
+    const userId = req.body.userId;
+    try {
+        await User.findByIdAndUpdate(userId, data);
+        res.send("User updated successfully");
+    } catch(err) {
+        res.status(400).send("Something went wrong!", err);
+    }
+});
+
+app.delete("/user", async (req, res) => {
+    const userId = req.body.userId;
+    try {
+        await User.findByIdAndDelete(userId);
+        res.send("User deleted successfully");
     } catch(err) {
         res.status(400).send("Something went wrong!", err);
     }
