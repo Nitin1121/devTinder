@@ -35,3 +35,9 @@ Episode 6
 - Call connectDb function before starting application on a PORT
 - Creation of schema and modal
 - Create CRUD api's to enuring its working
+
+Episode 7
+- JS Object vs JSON
+- Add midlleware express.json()
+- Make API dynamic to receive data from the end user
+- If there multiple similar record findOne() returns which one ?

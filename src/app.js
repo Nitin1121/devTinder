@@ -9,18 +9,49 @@ const PORT = 3000;
 // Creating server using expressJS framework
 const app = express(); // instance of expressJS application
 
+app.use(express.json());
+
 app.post("/signup", async (req, res) => {
-    const user = new User({
-        firstName: "Naveen",
-        lastName: "Vignesh",
-        username: "testing@gmail.com",
-        password: "Testing@123"
-    });
+    const user = new User(req.body);
     try {
         await user.save();
         res.send("User added successfully");
     } catch(err) {
-        res.status(500).send("Error saving the user", err);
+        res.status(400).send("Something went wrong!", err);
+    }
+});
+
+app.get("/user", async (req, res) => {
+    const userName = req.body.username;
+    try {
+        const users = await User.find({ username: userName });
+        if (!users.length) {
+            res.status(404).send("User not found");
+        } else {
+            res.send(users);
+        }
+
+        // const user = await User.findOne({ username: userName });
+        // if (!user) {
+        //     res.status(404).send("User not found");
+        // } else {
+        //     res.send(user);
+        // }
+    } catch(err) {
+        res.status(400).send("Something went wrong!", err);
+    }
+});
+
+app.get("/users", async (req, res) => {
+    try {
+        const users = await User.find();
+        if (!users.length) {
+            res.status(404).send("User not found");
+        } else {
+            res.send(users);
+        }
+    } catch(err) {
+        res.status(400).send("Something went wrong!", err);
     }
 });
 
