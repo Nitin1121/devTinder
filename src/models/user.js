@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
         lowercase: true,
         validate: (value) => {
             if(!validator.isEmail(value)) {
-                throw new Error("Invalid email address");
+                throw new Error("Email address is not valid");
             }
         }
     },
@@ -50,7 +50,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         validate: (value) => {
             if(!validator.isUrl(value)) {
-                throw new Error("Invalid photo url");
+                throw new Error("Photo url is not valid");
             }
         }
     },

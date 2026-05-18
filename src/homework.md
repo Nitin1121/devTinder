@@ -47,6 +47,14 @@ Episode 7
 Episode 8
 - Explore schema options from documentation
 - required, unique, trim, lowercase, uppercase, min/max, minLength/maxLength custom validation, timestamp
+- Never TRUST req.body
 - API level validation
 - Data sanitization for each fields
 - npm i validator and explore validator function
+
+Episode 9
+- Validate signup API
+- npm i bcrypt
+- Create a password Hash
+- Decrypt the password Hash
+- Create a login API
