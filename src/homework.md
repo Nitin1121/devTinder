@@ -69,3 +69,10 @@ Episode 10
 - How to add auth midlleware in routes
 - Expire jwt token & cookies
 - Try touse schema methods
+
+Episode 11
+- Explore tinder API
+- Group multiple routes in respective routers
+- Explore express router
+- Create route folder and create files in it
+- Import these routes in app.js
