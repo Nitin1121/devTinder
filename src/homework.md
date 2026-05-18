@@ -58,3 +58,13 @@ Episode 9
 - Create a password Hash
 - Decrypt the password Hash
 - Create a login API
+
+Episode 10
+- Install cookie-parser
+- Send a dummy cookie to user
+- Create a /profile and read the cookie
+- Install jsonwebtoken
+- Create a jwt token and send it back to user inside cookies
+- Auth middleware
+- How to add auth midlleware in routes
+- Expire jwt token & cookies

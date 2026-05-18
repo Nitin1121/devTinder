@@ -1,5 +1,7 @@
 const bcrypt = require("bcrypt");
 const express = require("express");
+const jwt = require("jsonwebtoken");
+const cookieParser = require("cookie-parser");
 const User = require("./models/user");
 const connectDb = require("./config/database");
 const { userAuthorization, adminAuthorization } = require("./middlewares/auth");
@@ -12,6 +14,7 @@ const PORT = 3000;
 const app = express(); // instance of expressJS application
 
 app.use(express.json());
+app.use(cookieParser());
 
 app.post("/signup", async (req, res) => {
     try {
@@ -52,9 +55,21 @@ app.post("/signin", async (req, res) => {
         if(!isValidPassword) {
             throw new Error("Invalid credentials");
         } else {
+            const token = jwt.sign({ _id: user._id}, "DEVTINDER@123", { expiresIn: "1d" });
+            res.cookie("token", token, { expires: new Date(Date.now() + 24 * 60 * 60 * 1000)});
             res.send("Login successful!")
         }
     } catch (err) {
+        res.status(400).send(`ERROR!: ${err.message}`);
+    }
+});
+
+app.get("/profile", async (req, res) => {
+    try {
+        const { user } = req;
+
+        res.send(user);
+    } catch(err) {
         res.status(400).send(`ERROR!: ${err.message}`);
     }
 });
