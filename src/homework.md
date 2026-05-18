@@ -68,3 +68,4 @@ Episode 10
 - Auth middleware
 - How to add auth midlleware in routes
 - Expire jwt token & cookies
+- Try touse schema methods
