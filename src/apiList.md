@@ -17,4 +17,4 @@ POST request/review/accepted/:userId
 userRouter
 GET user/feeds
 GET user/connections
-GET user/requests
+GET user/requests/received
