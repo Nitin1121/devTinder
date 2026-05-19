@@ -22,7 +22,9 @@ authRouter.post("/signup", async (req, res) => {
         });
 
         await user.save();
-        res.send("Signup successful!");
+        res.json({
+            message: "Signup successful!"
+        });
     } catch(err) {
         res.status(400).send(`ERROR!: ${err.message}`);
     }
@@ -46,7 +48,9 @@ authRouter.post("/signin", async (req, res) => {
         } else {
             const token = await user.getJwt();
             res.cookie("token", token, { expires: new Date(Date.now() + 24 * 60 * 60 * 1000)});
-            res.send("Signin successful!")
+            res.json({
+                message: "Signin successful!",
+            });
         }
     } catch (err) {
         res.status(400).send(`ERROR!: ${err.message}`);
@@ -56,7 +60,9 @@ authRouter.post("/signin", async (req, res) => {
 authRouter.post("/logout", async (req, res) => {
     try {
         res.cookie("token", null, { expires: new Date(Date.now()) });
-        res.send("Logout successful!");
+        res.json({
+            message: "Logout successful!",
+        });
     } catch (err) {
         res.status(400).send(`ERROR!: ${err.message}`);
     }

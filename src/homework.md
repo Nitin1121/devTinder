@@ -76,3 +76,10 @@ Episode 11
 - Explore express router
 - Create route folder and create files in it
 - Import these routes in app.js
+
+Episode 12
+- $or, &and
+- schema .pre function
+- Why we need index
+- Read compound index
+- Why we shouldnt create index on all fields in table
